@@ -111,8 +111,10 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
-
+DROP TABLE IF EXISTS Movie_Actors;
+DROP TABLE IF EXISTS Actors;
+DROP TABLE IF EXISTS Movies;
+DROP TABLE IF EXISTS Studios;
 -- Create new tables, according to your domain model
 -- TODO!
 
