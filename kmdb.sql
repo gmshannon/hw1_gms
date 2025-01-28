@@ -115,8 +115,40 @@ DROP TABLE IF EXISTS Movie_Actors;
 DROP TABLE IF EXISTS Actors;
 DROP TABLE IF EXISTS Movies;
 DROP TABLE IF EXISTS Studios;
+
 -- Create new tables, according to your domain model
 -- TODO!
+--Create Studios Table
+CREATE TABLE Studios (
+studio_id INTEGER PRIMARY KEY,
+name TEXT
+);
+
+--Create Movies Table
+Create Table Movies (
+    movie_id INTEGER PRIMARY KEY,
+    title TEXT,
+    year_released INTEGER,
+    mpaa_rating TEXT,
+    studio_id INTEGER,
+    FOREIGN KEY (studio_id) REFERENCES Studios(studio_id)
+);
+
+--Create Actors Table
+CREATE TABLE Actors (
+    actor_id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+--Create Joint Table
+CREATE TABLE Movie_Actors (
+    movie_id INTEGER,
+    actor_id INTEGER,
+    character_name TEXT,
+    FOREIGN KEY (movie_id) REFERENCES Movies(movie_id)
+    FOREIGN KEY (actor_id) REFERENCES Actors(actor_id)
+    PRIMARY KEY (movie_id, actor_id)
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
