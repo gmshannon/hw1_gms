@@ -117,7 +117,7 @@ DROP TABLE IF EXISTS Movies;
 DROP TABLE IF EXISTS Studios;
 
 -- Create new tables, according to your domain model
--- TODO!
+
 --Create Studios Table
 CREATE TABLE Studios (
 studio_id INTEGER PRIMARY KEY,
@@ -152,7 +152,43 @@ CREATE TABLE Movie_Actors (
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
+-- Studio Info
+INSERT INTO Studios (name) VALUES ('Warner Bros.')
+
+--Movie Info
+INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('Batman Begins', 2005, 'PG-13', 1);
+INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('The Dark Knight', 2008, 'PG-13', 1);
+INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('The Dark Knight Rises', 20012, 'PG-13', 1);
+
+--Actor Info
+INSERT INTO Actors (name) Values ('Christian Bale');
+INSERT INTO Actors (name) Values ('Michael Caine');
+INSERT INTO Actors (name) Values ('Liam Neeson');
+INSERT INTO Actors (name) Values ('Katie Holmes');
+INSERT INTO Actors (name) Values ('Gary Oldman');
+INSERT INTO Actors (name) Values ('Heath Ledger');
+INSERT INTO Actors (name) Values ('Aaron Eckhart');
+INSERT INTO Actors (name) Values ('Maggie Gyllenhaal');
+INSERT INTO Actors (name) Values ('Tom Hardy');
+INSERT INTO Actors (name) Values ('Joseph Gordon-Levitt');
+INSERT INTO Actors (name) Values ('Anne Hathaway');
+
+--Character Info
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (1,1, 'Bruce Wayne');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (1,2, 'Alfred');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (1,3, 'Ras Al Ghul');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (1,4, 'Rachel Dawes');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (1,5, 'Commissioner Gordon');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (2,1, 'Bruce Wayne');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (2,6, 'Joker');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (2,7, 'Harvey Dent');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (2,2, 'Alfred');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (2,8, 'Rachel Dawes');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,1, 'Bruce Wayne');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,5, 'Commissioner Gordon');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,9, 'Bane');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,10, 'John Blake');
+INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,11, 'Selina Kyle');
 
 -- Prints a header for the movies output
 .print "Movies"
