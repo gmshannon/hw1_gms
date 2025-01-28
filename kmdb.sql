@@ -153,12 +153,12 @@ CREATE TABLE Movie_Actors (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- Studio Info
-INSERT INTO Studios (name) VALUES ('Warner Bros.')
+INSERT INTO Studios (name) VALUES ('Warner Bros.');
 
 --Movie Info
 INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('Batman Begins', 2005, 'PG-13', 1);
 INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('The Dark Knight', 2008, 'PG-13', 1);
-INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('The Dark Knight Rises', 20012, 'PG-13', 1);
+INSERT INTO Movies (title, year_released, mpaa_rating, studio_id) VALUES ('The Dark Knight Rises', 2012, 'PG-13', 1);
 
 --Actor Info
 INSERT INTO Actors (name) Values ('Christian Bale');
@@ -196,7 +196,7 @@ INSERT INTO Movie_Actors (movie_id, actor_id, character_name) VALUES (3,11, 'Sel
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+SELECT Movies.title, Movies.year_released, Movies.mpaa_rating, Studios.name AS studio FROM Movies Join Studios ON Movies.studio_id = Studios.studio_id;
 
 -- Prints a header for the cast output
 .print ""
