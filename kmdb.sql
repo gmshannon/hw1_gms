@@ -207,3 +207,8 @@ SELECT Movies.title, Movies.year_released, Movies.mpaa_rating, Studios.name AS s
 
 -- The SQL statement for the cast output
 -- TODO!
+SELECT Movies.title, Actors.name, Movie_Actors.character_name 
+FROM Movies 
+JOIN Movie_Actors ON Movies.movie_id = Movie_Actors.movie_id
+JOIN Actors ON Actors.actor_id = Movie_Actors.actor_id
+ORDER BY Movies.title, Actors.name;
